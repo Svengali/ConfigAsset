@@ -1,21 +1,11 @@
-# TextAsset
+# ConfigAsset
 
-Unreal Engine 4 plug-in that adds a text asset and editor for personal notes.
+Unreal Engine 4 plug-in for config values
 
 ![Screenshot](Docs/screenshot.png)
 
 
 ## About
-
-The TextAsset plug-in implements two modules that demonstrate how to add a new
-type of content asset to Unreal Engine 4. The asset itself stores a simple text
-string that can be used for adding personal notes or other textual information
-to your project, or to be consumed within Blueprints. The plug-in also includes
-an asset editor, asset factories, and asset actions for the Content Browser. 
-
-Make sure to pull the *Tag* that matches your Unreal Engine version. If you sync
-to *Master* the code may not compile, because it may depend on Engine changes
-that are not yet available in the UE4 Master branch.
 
 ## Supported Platforms
 

@@ -8,18 +8,18 @@
 #include "Templates/SharedPointer.h"
 #include "Toolkits/AssetEditorToolkit.h"
 
-#include "AssetTools/TextAssetActions.h"
-#include "Styles/TextAssetEditorStyle.h"
-#include "TextAssetEditorSettings.h"
+#include "AssetTools/ConfigAssetActions.h"
+#include "Styles/ConfigAssetEditorStyle.h"
+#include "ConfigAssetEditorSettings.h"
 
 
-#define LOCTEXT_NAMESPACE "FTextAssetEditorModule"
+#define LOCTEXT_NAMESPACE "FConfigAssetEditorModule"
 
 
 /**
- * Implements the TextAssetEditor module.
+ * Implements the ConfigAssetEditor module.
  */
-class FTextAssetEditorModule
+class FConfigAssetEditorModule
 	: public IHasMenuExtensibility
 	, public IHasToolBarExtensibility
 	, public IModuleInterface
@@ -48,9 +48,9 @@ public:
 
 	virtual void StartupModule() override
 	{
-		Style = MakeShareable(new FTextAssetEditorStyle());
+		Style = MakeShareable(new FConfigAssetEditorStyle());
 
-//		FTextAssetEditorCommands::Register();
+//		FConfigAssetEditorCommands::Register();
 
 		RegisterAssetTools();
 		RegisterMenuExtensions();
@@ -76,7 +76,7 @@ protected:
 	{
 		IAssetTools& AssetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
 
-		RegisterAssetTypeAction(AssetTools, MakeShareable(new FTextAssetActions(Style.ToSharedRef())));
+		RegisterAssetTypeAction(AssetTools, MakeShareable(new FConfigAssetActions(Style.ToSharedRef())));
 	}
 
 	/**
@@ -98,10 +98,10 @@ protected:
 
 		if (SettingsModule != nullptr)
 		{
-			ISettingsSectionPtr SettingsSection = SettingsModule->RegisterSettings("Editor", "Plugins", "TextAsset",
-				LOCTEXT("TextAssetSettingsName", "Text Asset"),
-				LOCTEXT("TextAssetSettingsDescription", "Configure the Text Asset plug-in."),
-				GetMutableDefault<UTextAssetEditorSettings>()
+			ISettingsSectionPtr SettingsSection = SettingsModule->RegisterSettings("Editor", "Plugins", "ConfigAsset",
+				LOCTEXT("ConfigAssetSettingsName", "Config Asset"),
+				LOCTEXT("ConfigAssetSettingsDescription", "Configure the Config Asset plug-in."),
+				GetMutableDefault<UConfigAssetEditorSettings>()
 			);
 		}
 	}
@@ -129,7 +129,7 @@ protected:
 
 		if (SettingsModule != nullptr)
 		{
-			SettingsModule->UnregisterSettings("Editor", "Plugins", "TextAsset");
+			SettingsModule->UnregisterSettings("Editor", "Plugins", "ConfigAsset");
 		}
 	}
 
@@ -165,7 +165,7 @@ private:
 };
 
 
-IMPLEMENT_MODULE(FTextAssetEditorModule, TextAssetEditor);
+IMPLEMENT_MODULE(FConfigAssetEditorModule, ConfigAssetEditor);
 
 
 #undef LOCTEXT_NAMESPACE

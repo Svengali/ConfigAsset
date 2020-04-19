@@ -5,14 +5,14 @@
 #include "Factories/Factory.h"
 #include "UObject/ObjectMacros.h"
 
-#include "TextAssetFactory.generated.h"
+#include "ConfigAssetFactory.generated.h"
 
 
 /**
- * Implements a factory for UTextAsset objects.
+ * Implements a factory for UConfigAsset objects.
  */
 UCLASS(hidecategories=Object)
-class UTextAssetFactory
+class UConfigAssetFactory
 	: public UFactory
 {
 	GENERATED_UCLASS_BODY()

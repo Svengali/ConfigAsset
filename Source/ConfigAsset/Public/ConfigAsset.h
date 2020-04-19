@@ -2,11 +2,11 @@
 
 #pragma once
 
-#include "Internationalization/Text.h"
+#include "Internationalization/Config.h"
 #include "UObject/Object.h"
 #include "UObject/ObjectMacros.h"
 
-#include "TextAsset.generated.h"
+#include "ConfigAsset.generated.h"
 
 
 /**
@@ -14,7 +14,7 @@
  * or documentation.
  */
 UCLASS(BlueprintType, hidecategories=(Object))
-class TEXTASSET_API UTextAsset
+class TEXTASSET_API UConfigAsset
 	: public UObject
 {
 	GENERATED_BODY()
@@ -22,6 +22,6 @@ class TEXTASSET_API UTextAsset
 public:
 
 	/** Holds the stored text. */
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="TextAsset")
-	FText Text;
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="ConfigAsset")
+	FConfig Config;
 };

@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class TextAssetEditor : ModuleRules
+public class ConfigAssetEditor : ModuleRules
 {
-	public TextAssetEditor(ReadOnlyTargetRules Target) : base(Target)
+	public ConfigAssetEditor(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
@@ -17,13 +17,13 @@ public class TextAssetEditor : ModuleRules
 
 		PrivateIncludePaths.AddRange(
 			new string[] {
-				"TextAssetEditor/Private",
-				"TextAssetEditor/Private/AssetTools",
-				"TextAssetEditor/Private/Factories",
-				"TextAssetEditor/Private/Shared",
-				"TextAssetEditor/Private/Styles",
-				"TextAssetEditor/Private/Toolkits",
-				"TextAssetEditor/Private/Widgets",
+				"ConfigAssetEditor/Private",
+				"ConfigAssetEditor/Private/AssetTools",
+				"ConfigAssetEditor/Private/Factories",
+				"ConfigAssetEditor/Private/Shared",
+				"ConfigAssetEditor/Private/Styles",
+				"ConfigAssetEditor/Private/Toolkits",
+				"ConfigAssetEditor/Private/Widgets",
 			});
 
 		PrivateDependencyModuleNames.AddRange(
@@ -38,7 +38,7 @@ public class TextAssetEditor : ModuleRules
 				"Projects",
 				"Slate",
 				"SlateCore",
-				"TextAsset",
+				"ConfigAsset",
 				"UnrealEd",
 			});
 

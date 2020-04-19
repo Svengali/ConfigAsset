@@ -2,9 +2,9 @@
 
 namespace UnrealBuildTool.Rules
 {
-	public class TextAsset : ModuleRules
+	public class ConfigAsset : ModuleRules
 	{
-		public TextAsset(ReadOnlyTargetRules Target) : base(Target)
+		public ConfigAsset(ReadOnlyTargetRules Target) : base(Target)
 		{
 			PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
@@ -16,7 +16,7 @@ namespace UnrealBuildTool.Rules
 
 			PrivateIncludePaths.AddRange(
 				new string[] {
-					"Runtime/TextAsset/Private",
+					"Runtime/ConfigAsset/Private",
 				});
 		}
 	}

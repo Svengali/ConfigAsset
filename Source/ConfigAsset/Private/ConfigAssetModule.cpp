@@ -5,9 +5,9 @@
 
 
 /**
- * Implements the TextAsset module.
+ * Implements the ConfigAsset module.
  */
-class FTextAssetModule
+class FConfigAssetModule
 	: public IModuleInterface
 {
 public:
@@ -24,4 +24,4 @@ public:
 };
 
 
-IMPLEMENT_MODULE(FTextAssetModule, TextAsset);
+IMPLEMENT_MODULE(FConfigAssetModule, ConfigAsset);

@@ -6,35 +6,35 @@
 #include "Styling/SlateColor.h"
 #include "UObject/ObjectMacros.h"
 
-#include "TextAssetEditorSettings.generated.h"
+#include "ConfigAssetEditorSettings.generated.h"
 
 
 UCLASS(config=Editor)
-class TEXTASSETEDITOR_API UTextAssetEditorSettings
+class TEXTASSETEDITOR_API UConfigAssetEditorSettings
 	: public UObject
 {
 	GENERATED_BODY()
 
 public:
 
-	/** Color of the TextAsset editor's background. */
+	/** Color of the ConfigAsset editor's background. */
 	UPROPERTY(config, EditAnywhere, Category=Appearance)
 	FSlateColor BackgroundColor;
 
-	/** Color of the TextAsset editor's text. */
+	/** Color of the ConfigAsset editor's text. */
 	UPROPERTY(config, EditAnywhere, Category=Appearance)
 	FSlateColor ForegroundColor;
 
-	/** The font to use in the TextAsset editor window. */
+	/** The font to use in the ConfigAsset editor window. */
 	UPROPERTY(config, EditAnywhere, Category=Appearance)
 	FSlateFontInfo Font;
 
-	/** The margin around the TextAsset editor window (in pixels). */
+	/** The margin around the ConfigAsset editor window (in pixels). */
 	UPROPERTY(config, EditAnywhere, Category=Appearance)
 	float Margin;
 
 public:
 
 	/** Default constructor. */
-	UTextAssetEditorSettings();
+	UConfigAssetEditorSettings();
 };

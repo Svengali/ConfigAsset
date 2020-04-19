@@ -9,9 +9,9 @@ class ISlateStyle;
 
 
 /**
- * Implements an action for UTextAsset assets.
+ * Implements an action for UConfigAsset assets.
  */
-class FTextAssetActions
+class FConfigAssetActions
 	: public FAssetTypeActions_Base
 {
 public:
@@ -21,7 +21,7 @@ public:
 	 *
 	 * @param InStyle The style set to use for asset editor toolkits.
 	 */
-	FTextAssetActions(const TSharedRef<ISlateStyle>& InStyle);
+	FConfigAssetActions(const TSharedRef<ISlateStyle>& InStyle);
 
 public:
 
@@ -30,7 +30,7 @@ public:
 	virtual bool CanFilter() override;
 	virtual void GetActions(const TArray<UObject*>& InObjects, FMenuBuilder& MenuBuilder) override;
 	virtual uint32 GetCategories() override;
-	virtual FText GetName() const override;
+	virtual FConfig GetName() const override;
 	virtual UClass* GetSupportedClass() const override;
 	virtual FColor GetTypeColor() const override;
 	virtual bool HasActions(const TArray<UObject*>& InObjects) const override;

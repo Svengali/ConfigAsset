@@ -1,13 +1,13 @@
 {
-	"FileVersion" : 3,
-	"Version" : 8,
-	"VersionName" : "8.0",
+	"FileVersion" : 1,
+	"Version" : 1,
+	"VersionName" : "0.1",
 	"EngineVersion" : "4.19.0",
-	"FriendlyName" : "Text Asset",
-	"Description" : "Adds an editable text content asset for personal notes.",
-	"Category" : "Editor",
-	"CreatedBy" : "Epic Games Inc",
-	"CreatedByURL" : "http://epicgames.com",
+	"FriendlyName" : "Config Asset",
+	"Description" : "Editable text assets",
+	"Category" : "Config",
+	"CreatedBy" : "Marc Hernandez",
+	"CreatedByURL" : "http://marcsh.dev",
 	"DocsURL" : "",
 	"MarketplaceURL" : "",
 	"SupportURL" : "",
@@ -18,12 +18,12 @@
 	"Modules" :
 	[
 		{
-			"Name" : "TextAsset",
+			"Name" : "ConfigAsset",
 			"Type" : "Runtime",
 			"LoadingPhase" : "Default"
 		},
 		{
-			"Name" : "TextAssetEditor",
+			"Name" : "ConfigAssetEditor",
 			"Type" : "Editor",
 			"LoadingPhase" : "Default"
 		}

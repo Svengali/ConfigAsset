@@ -11,13 +11,13 @@ class FSpawnTabArgs;
 class ISlateStyle;
 class IToolkitHost;
 class SDockTab;
-class UTextAsset;
+class UConfigAsset;
 
 
 /**
  * Implements an Editor toolkit for textures.
  */
-class FTextAssetEditorToolkit
+class FConfigAssetEditorToolkit
 	: public FAssetEditorToolkit
 	, public FEditorUndoClient
 	, public FGCObject
@@ -29,21 +29,21 @@ public:
 	 *
 	 * @param InStyle The style set to use.
 	 */
-	FTextAssetEditorToolkit(const TSharedRef<ISlateStyle>& InStyle);
+	FConfigAssetEditorToolkit(const TSharedRef<ISlateStyle>& InStyle);
 
 	/** Virtual destructor. */
-	virtual ~FTextAssetEditorToolkit();
+	virtual ~FConfigAssetEditorToolkit();
 
 public:
 
 	/**
 	 * Initializes the editor tool kit.
 	 *
-	 * @param InTextAsset The UTextAsset asset to edit.
+	 * @param InConfigAsset The UConfigAsset asset to edit.
 	 * @param InMode The mode to create the toolkit in.
 	 * @param InToolkitHost The toolkit host.
 	 */
-	void Initialize(UTextAsset* InTextAsset, const EToolkitMode::Type InMode, const TSharedPtr<IToolkitHost>& InToolkitHost);
+	void Initialize(UConfigAsset* InConfigAsset, const EToolkitMode::Type InMode, const TSharedPtr<IToolkitHost>& InToolkitHost);
 
 public:
 
@@ -57,7 +57,7 @@ public:
 
 	//~ IToolkit interface
 
-	virtual FText GetBaseToolkitName() const override;
+	virtual FConfig GetBaseToolkitName() const override;
 	virtual FName GetToolkitFName() const override;
 	virtual FLinearColor GetWorldCentricTabColorScale() const override;
 	virtual FString GetWorldCentricTabPrefix() const override;
@@ -83,7 +83,7 @@ private:
 private:
 
 	/** The text asset being edited. */
-	UTextAsset* TextAsset;
+	UConfigAsset* ConfigAsset;
 
 	/** Pointer to the style set to use for toolkits. */
 	TSharedRef<ISlateStyle> Style;
