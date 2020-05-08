@@ -45,7 +45,7 @@ void FConfigAssetActions::GetActions(const TArray<UObject*>& InObjects, FMenuBui
 				{
 					if (ConfigAsset.IsValid() && !ConfigAsset->Config.IsEmpty())
 					{
-						ConfigAsset->Config = FConfig::FromString(ConfigAsset->Config.ToString().Reverse());
+						ConfigAsset->Config = FText::FromString(ConfigAsset->Config.ToString().Reverse());
 						ConfigAsset->PostEditChange();
 						ConfigAsset->MarkPackageDirty();
 					}
@@ -72,7 +72,7 @@ uint32 FConfigAssetActions::GetCategories()
 }
 
 
-FConfig FConfigAssetActions::GetName() const
+FText FConfigAssetActions::GetName() const
 {
 	return NSLOCTEXT("AssetTypeActions", "AssetTypeActions_ConfigAsset", "Config Asset");
 }

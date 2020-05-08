@@ -3,11 +3,11 @@
 #include "SConfigAssetEditor.h"
 
 #include "Fonts/SlateFontInfo.h"
-#include "Internationalization/Config.h"
+#include "Internationalization/Text.h"
 #include "ConfigAsset.h"
 #include "UObject/Class.h"
 #include "Widgets/SBoxPanel.h"
-#include "Widgets/Input/SMultiLineEditableConfigBox.h"
+#include "Widgets/Input/SMultiLineEditableTextBox.h"
 
 #include "ConfigAssetEditorSettings.h"
 
@@ -37,14 +37,14 @@ void SConfigAssetEditor::Construct(const FArguments& InArgs, UConfigAsset* InCon
 		+ SVerticalBox::Slot()
 			.FillHeight(1.0f)
 			[
-				SAssignNew(EditableConfigBox, SMultiLineEditableConfigBox)
+				SAssignNew(EditableTextBox, SMultiLineEditableTextBox)
 					.BackgroundColor((Settings != nullptr) ? Settings->BackgroundColor : FLinearColor::White)
 					.Font((Settings != nullptr) ? Settings->Font : FSlateFontInfo())
 					.ForegroundColor((Settings != nullptr) ? Settings->ForegroundColor : FLinearColor::Black)
 					.Margin((Settings != nullptr) ? Settings->Margin : 4.0f)
-					.OnConfigChanged(this, &SConfigAssetEditor::HandleEditableConfigBoxConfigChanged)
-					.OnConfigCommitted(this, &SConfigAssetEditor::HandleEditableConfigBoxConfigCommitted)
-					.Config(ConfigAsset->Config)
+					.OnTextChanged(this, &SConfigAssetEditor::HandleEditableTextBoxTextChanged)
+					.OnTextCommitted(this, &SConfigAssetEditor::HandleEditableTextBoxTextCommitted)
+					.Text(ConfigAsset->Config)
 			]
 	];
 
@@ -55,15 +55,15 @@ void SConfigAssetEditor::Construct(const FArguments& InArgs, UConfigAsset* InCon
 /* SConfigAssetEditor callbacks
  *****************************************************************************/
 
-void SConfigAssetEditor::HandleEditableConfigBoxConfigChanged(const FConfig& NewConfig)
+void SConfigAssetEditor::HandleEditableTextBoxTextChanged(const FText& NewConfig)
 {
 	ConfigAsset->MarkPackageDirty();
 }
 
 
-void SConfigAssetEditor::HandleEditableConfigBoxConfigCommitted(const FConfig& Comment, EConfigCommit::Type CommitType)
+void SConfigAssetEditor::HandleEditableTextBoxTextCommitted(const FText& Comment, ETextCommit::Type CommitType)
 {
-	ConfigAsset->Config = EditableConfigBox->GetConfig();
+	ConfigAsset->Config = EditableTextBox->GetText();
 }
 
 
@@ -71,7 +71,7 @@ void SConfigAssetEditor::HandleConfigAssetPropertyChanged(UObject* Object, FProp
 {
 	if (Object == ConfigAsset)
 	{
-		EditableConfigBox->SetConfig(ConfigAsset->Config);
+		EditableTextBox->SetText(ConfigAsset->Config);
 	}
 }
 

@@ -10,7 +10,7 @@
 
 
 UCLASS(config=Editor)
-class TEXTASSETEDITOR_API UConfigAssetEditorSettings
+class CONFIGASSETEDITOR_API UConfigAssetEditorSettings
 	: public UObject
 {
 	GENERATED_BODY()

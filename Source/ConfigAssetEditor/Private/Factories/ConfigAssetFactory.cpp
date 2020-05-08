@@ -13,10 +13,12 @@
 UConfigAssetFactory::UConfigAssetFactory( const FObjectInitializer& ObjectInitializer )
 	: Super(ObjectInitializer)
 {
-	Formats.Add(FString(TEXT("txt;")) + NSLOCTEXT("UConfigAssetFactory", "FormatTxt", "Config File").ToString());
+	Formats.Add(FString(TEXT("json;")) + NSLOCTEXT("UConfigAssetFactory", "FormatTxt", "Config File").ToString());
 	SupportedClass = UConfigAsset::StaticClass();
 	bCreateNew = false;
 	bEditorImport = true;
+
+	bText = true;
 }
 
 
@@ -47,7 +49,7 @@ UObject* UConfigAssetFactory::FactoryCreateFile(UClass* InClass, UObject* InPare
 	if (FFileHelper::LoadFileToString(ConfigString, *Filename))
 	{
 		ConfigAsset = NewObject<UConfigAsset>(InParent, InClass, InName, Flags);
-		ConfigAsset->Config = FConfig::FromString(ConfigString);
+		ConfigAsset->Config = FText::FromString(ConfigString);
 	}
 
 	bOutOperationCanceled = false;

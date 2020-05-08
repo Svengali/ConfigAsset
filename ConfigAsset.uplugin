@@ -2,7 +2,7 @@
 	"FileVersion" : 1,
 	"Version" : 1,
 	"VersionName" : "0.1",
-	"EngineVersion" : "4.19.0",
+	"EngineVersion" : "4.24.0",
 	"FriendlyName" : "Config Asset",
 	"Description" : "Editable text assets",
 	"Category" : "Config",

@@ -131,7 +131,7 @@ void FConfigAssetEditorToolkit::UnregisterTabSpawners(const TSharedRef<FTabManag
 /* IToolkit interface
  *****************************************************************************/
 
-FConfig FConfigAssetEditorToolkit::GetBaseToolkitName() const
+FText FConfigAssetEditorToolkit::GetBaseToolkitName() const
 {
 	return LOCTEXT("AppLabel", "Config Asset Editor");
 }

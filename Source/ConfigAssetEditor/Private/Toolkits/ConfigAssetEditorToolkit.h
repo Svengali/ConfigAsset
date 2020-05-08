@@ -57,7 +57,7 @@ public:
 
 	//~ IToolkit interface
 
-	virtual FConfig GetBaseToolkitName() const override;
+	virtual FText GetBaseToolkitName() const override;
 	virtual FName GetToolkitFName() const override;
 	virtual FLinearColor GetWorldCentricTabColorScale() const override;
 	virtual FString GetWorldCentricTabPrefix() const override;

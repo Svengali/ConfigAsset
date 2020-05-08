@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "Internationalization/Config.h"
+#include "Internationalization/Text.h"
 #include "UObject/Object.h"
 #include "UObject/ObjectMacros.h"
 
@@ -14,7 +14,7 @@
  * or documentation.
  */
 UCLASS(BlueprintType, hidecategories=(Object))
-class TEXTASSET_API UConfigAsset
+class CONFIGASSET_API UConfigAsset
 	: public UObject
 {
 	GENERATED_BODY()
@@ -23,5 +23,5 @@ public:
 
 	/** Holds the stored text. */
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="ConfigAsset")
-	FConfig Config;
+	FText Config;
 };

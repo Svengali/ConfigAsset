@@ -5,7 +5,7 @@
 #include "Templates/SharedPointer.h"
 #include "Widgets/DeclarativeSyntaxSupport.h"
 #include "Widgets/SCompoundWidget.h"
-#include "Widgets/Input/SMultiLineEditableConfigBox.h"
+#include "Widgets/Input/SMultiLineEditableTextBox.h"
 
 class FConfig;
 class ISlateStyle;
@@ -40,10 +40,10 @@ public:
 private:
 
 	/** Callback for text changes in the editable text box. */
-	void HandleEditableConfigBoxConfigChanged(const FConfig& NewConfig);
+	void HandleEditableTextBoxTextChanged(const FText& NewConfig);
 
 	/** Callback for committed text in the editable text box. */
-	void HandleEditableConfigBoxConfigCommitted(const FConfig& Comment, EConfigCommit::Type CommitType);
+	void HandleEditableTextBoxTextCommitted(const FText& Comment, ETextCommit::Type CommitType);
 
 	/** Callback for property changes in the text asset. */
 	void HandleConfigAssetPropertyChanged(UObject* Object, FPropertyChangedEvent& PropertyChangedEvent);
@@ -51,7 +51,7 @@ private:
 private:
 
 	/** Holds the editable text box widget. */
-	TSharedPtr<SMultiLineEditableConfigBox> EditableConfigBox;
+	TSharedPtr<SMultiLineEditableTextBox> EditableTextBox;
 
 	/** Pointer to the text asset that is being edited. */
 	UConfigAsset* ConfigAsset;
